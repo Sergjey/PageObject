@@ -15,5 +15,5 @@ class BasePage():
         except (NoSuchElementException):#в скобках и в заголовке from selenium.common.exceptions \
             # указываемя имя_исключение, except (Exception) тогда будут ловиться ВСЕ исключения,\
             # а так только то что в скобках
-            return False#inplicity_wait будет возвращать True or False
+            return False#implicity_wait будет возвращать True or False
         return True
