@@ -12,6 +12,8 @@ class BasePage():
     def is_element_present(self, how, what):#how как ищем BY ID, what что ищем id=link
         try:
             self.browser.find_element(how, what)
-        except (NoSuchElementException):#в скобках и в заголовке from selenium.common.exceptions указываемя имя_исключение
+        except (NoSuchElementException):#в скобках и в заголовке from selenium.common.exceptions \
+            # указываемя имя_исключение, except (Exception) тогда будут ловиться ВСЕ исключения,\
+            # а так только то что в скобках
             return False#inplicity_wait будет возвращать True or False
         return True
