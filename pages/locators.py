@@ -14,3 +14,4 @@ class LoginPageLocators():
 class ProductPageLocators():
     ITEM = (By.CSS_SELECTOR, ".item.active")
     ADD_ITEM = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
+    CHOOSEN_ITEM = (By.CSS_SELECTOR, ".alertinner")
