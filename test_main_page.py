@@ -9,8 +9,8 @@ def test_guest_can_go_to_login_page(browser):
     page.open()
     #time.sleep(5)
     page.go_to_login_page() #выполняем метод страницы - открываем страницу логина
-    login_page = page.go_to_login_page()
-    login_page.should_be_login_page()#осуществляем переход на страницу с логином
+    #login_page = page.go_to_login_page()
+    #login_page.should_be_login_page()#осуществляем переход на страницу с логином
     #time.sleep(5)
 
 def test_guest_should_see_login_link(browser):
@@ -22,21 +22,21 @@ def test_guest_should_see_login_link(browser):
 
 #тесты для LoginPage
 def test_guest_should_see_login_url(browser):
-    link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
+    link = "http://selenium1py.pythonanywhere.com/e/"
     page = LoginPage(browser, link)
     page.open()
     #time.sleep(5)
     page.should_be_login_url()
 
 def test_guest_should_see_login_form(browser):
-    link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
+    link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
     page = LoginPage(browser, link)
     page.open()
     #time.sleep(5)
     page.should_be_login_form()
 
 def test_guest_should_see_register_form(browser):
-    link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
+    link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
     page = LoginPage(browser, link)
     page.open()
     #time.sleep(5)
