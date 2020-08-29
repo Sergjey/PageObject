@@ -12,6 +12,11 @@ class LoginPageLocators():
 
 #класс со страницей продукта
 class ProductPageLocators():
+    #товар и добавление товара
     ITEM = (By.CSS_SELECTOR, ".item.active")
     ADD_ITEM = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
-    CHOOSEN_ITEM = (By.CSS_SELECTOR, ".alertinner")
+    #цена на странице и в корзине + название товара на странице и в сообщении
+    PRICE_ON_PAGES_OF_PRODUCT = (By.CSS_SELECTOR, ".col-sm-6.product_main .price_color")
+    PRICE_IN_BASKET = (By.CSS_SELECTOR, ".basket-mini.pull-right.hidden-xs:nth-child(2)")
+    PRODUCT_NAME_ON_PAGE = (By.CSS_SELECTOR, ".col-sm-6.product_main>h1")
+    PRODUCT_NAME_IN_MESSAGE = (By.CSS_SELECTOR, ".alert-safe.alert-noicon.alert-success:nth-child(1) strong")
