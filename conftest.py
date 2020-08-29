@@ -2,6 +2,10 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+#скрывать браузер при запуске тестов
+# options.add_argument('headless')
+# options.add_argument('window-size=1920x935')
+
 def pytest_addoption(parser):
     #добавляем обработчик, который считывает из командной строки, используемый браузер
     parser.addoption('--browser_name', action='store', default="chrome",
