@@ -4,6 +4,12 @@ from .locators import MainPageLocators
 from .login_page import LoginPage #осуществляет переход на страниц с логином
 
 class MainPage(BasePage):
+    def __init__(self, *args, **kwargs):
+        super(MainPage, self).__init__(*args, **kwargs)
+        #либо просто
+        #class MainPage(BasePage):
+            #pass
+
     # переход к странице логина
     def go_to_login_page(self):
         link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
