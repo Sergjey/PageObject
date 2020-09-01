@@ -2,6 +2,8 @@ import time
 
 import pytest
 
+#from .pages.basket_page import BasketPage
+#from .pages.login_page import LoginPage
 from .pages.product_page import ProductPage
 
 #добавление товара в корзину со страницы товара
@@ -17,3 +19,31 @@ def test_guest_can_add_product_to_basket(browser, numlink):
     page.solve_quiz_and_get_code()
     # вызываем один метод который наследует 4 других
     page.should_be_product_page()
+
+#Проверяем, что нет сообщения об успехе с помощью is_not_element_present,
+# падает сразу т.к. появляется сообщение об успешном добавлении
+@pytest.mark.xfail(reason="This test should fall")
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
+    page = ProductPage(browser, link)
+    page.open()
+    page.add_item_in_basket()
+    page.solve_quiz_and_get_code()
+    page.should_not_be_product_message()
+
+#Проверяем, что нет сообщения об успехе с помощью is_not_element_present
+def test_guest_cant_see_success_message(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_not_be_product_message()
+
+#Проверяем, что нет сообщения об успехе с помощью is_disappeared
+@pytest.mark.xfail(reason="This test should fall")
+def test_message_disappeared_after_adding_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
+    page = ProductPage(browser, link)
+    page.open()
+    page.add_item_in_basket()
+    page.solve_quiz_and_get_code()
+    page.should_be_disappear_product_message()
