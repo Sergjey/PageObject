@@ -18,8 +18,8 @@ def browser(request):
     if browser_name == "chrome":
         options = Options()
         # скрывать браузер при запуске тестов - 2 след строки
-        options.add_argument('headless')
-        options.add_argument('window-size=1920x935')
+        # options.add_argument('headless')
+        # options.add_argument('window-size=1920x935')
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         print("\nstart chrome browser for test..")
         browser = webdriver.Chrome(options=options)
